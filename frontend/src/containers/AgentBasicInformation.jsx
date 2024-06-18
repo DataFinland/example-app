@@ -10,11 +10,14 @@ const SOURCES = {
   "ioxio:no": "ioxio:no",
 }
 const DEFAULT_SOURCE = "ioxio:fi"
-const DEFAULT_NATIONAL_IDENTIFIER = "2464491-9"
+const DEFAULT_NATIONAL_IDENTIFIERS = {
+  "ioxio:fi": "2464491-9",
+  "ioxio:no": "923609016",
+}
 
 export default function AgentBasicInformation() {
   const [nationalIdentifier, setNationalIdentifier] = useState(
-    DEFAULT_NATIONAL_IDENTIFIER
+    DEFAULT_NATIONAL_IDENTIFIERS[DEFAULT_SOURCE]
   )
   const [source, setSource] = useState(DEFAULT_SOURCE)
 
@@ -25,6 +28,7 @@ export default function AgentBasicInformation() {
   function updateSource(event) {
     const source = event.target.value
     setSource(source)
+    setNationalIdentifier(DEFAULT_NATIONAL_IDENTIFIERS[source])
   }
 
   async function fetchBasicInformation(event) {

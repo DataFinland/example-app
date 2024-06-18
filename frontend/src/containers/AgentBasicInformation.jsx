@@ -6,8 +6,8 @@ import { fetchDataProduct } from "../utils"
 
 const DEFINITION = "NSG/Agent/BasicInformation_v1.0"
 const SOURCES = {
-  "ioxio:fi": "ioxio:fi",
-  "ioxio:no": "ioxio:no",
+  "ioxio:fi": "Patentti- ja rekisterihallitus",
+  "ioxio:no": "Brønnøysundregistrene",
 }
 const DEFAULT_SOURCE = "ioxio:fi"
 const DEFAULT_NATIONAL_IDENTIFIERS = {
@@ -57,7 +57,9 @@ export default function AgentBasicInformation() {
               <div>Source</div>
               <select onChange={updateSource} value={source}>
                 {Object.keys(SOURCES).map((source) => (
-                  <option key={source}>{source}</option>
+                  <option key={source} value={source}>
+                    {SOURCES[source]}
+                  </option>
                 ))}
               </select>
             </div>

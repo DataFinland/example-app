@@ -5,7 +5,7 @@ export default function Navbar() {
     <div className="nav">
       <a
         className="nav-link"
-        href="https://github.com/ioxio-dataspace/example-app"
+        href="https://github.com/DataFinland/example-app"
         rel="noreferrer"
         target="_blank"
       >

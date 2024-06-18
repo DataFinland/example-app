@@ -22,7 +22,7 @@ on:
 
 name: Build and Deploy to Cloud Run
 env:
-  SERVICE: ds-example-app
+  SERVICE: ds-example-app-df
   REGION: europe-west1
   REGISTRY: eu.gcr.io
   DOCKER_BUILDKIT: 1

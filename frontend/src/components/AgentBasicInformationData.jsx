@@ -1,12 +1,8 @@
 export default function AgentBasicInformationData({ basicInformation }) {
-  function formatLegalForm(lf) {
-    return lf
-  }
-
   return (
     <div className="data">
       <div>Company name: {basicInformation.name}</div>
-      <div>Company form: {formatLegalForm(basicInformation.legalForm)}</div>
+      <div>Company form: {basicInformation.legalForm}</div>
       <div>Legal status: {basicInformation.legalStatus}</div>
       <div>Registration date: {basicInformation.registrationDate}</div>
       <div>Business ID: {basicInformation.nationalIdentifier}</div>

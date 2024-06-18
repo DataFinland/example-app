@@ -19,6 +19,7 @@ export default function AgentBasicInformation() {
   const [source, setSource] = useState(DEFAULT_SOURCE)
 
   const [isFetching, setIsFetching] = useState(false)
+  const [isError, setIsError] = useState(false)
   const [basicInformation, setBasicInformation] = useState({})
 
   function updateSource(event) {
@@ -34,7 +35,10 @@ export default function AgentBasicInformation() {
       // Add the national identifier to the data; it's not included in the response
       resp.data["nationalIdentifier"] = nationalIdentifier
       setBasicInformation(resp.data)
+      setIsError(false)
     } else {
+      setIsError(true)
+      setIsFetching(false)
       throw new Error("Failed to fetch basic information")
     }
     setIsFetching(false)
@@ -64,7 +68,8 @@ export default function AgentBasicInformation() {
           </form>
           <div>
             {isFetching && <i>Loading...</i>}
-            {!isFetching && basicInformation.legalForm !== undefined && (
+            {!isFetching && isError && <i>Error, failed to fetch data.</i>}
+            {!isFetching && !isError && basicInformation.legalForm !== undefined && (
               <AgentBasicInformationData basicInformation={basicInformation} />
             )}
           </div>

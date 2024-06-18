@@ -59,12 +59,6 @@ body,
   padding: 1rem;
 }
 
-.user-navbar {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1rem;
-}
-
 .basic-information .main-box {
   display: grid;
   grid-template-columns: auto auto;

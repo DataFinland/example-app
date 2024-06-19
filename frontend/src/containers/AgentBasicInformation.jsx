@@ -20,7 +20,6 @@ export default function AgentBasicInformation() {
     DEFAULT_NATIONAL_IDENTIFIERS[DEFAULT_SOURCE]
   )
   const [source, setSource] = useState(DEFAULT_SOURCE)
-
   const [isFetching, setIsFetching] = useState(false)
   const [isError, setIsError] = useState(false)
   const [basicInformation, setBasicInformation] = useState({})

@@ -1,7 +1,5 @@
 export async function fetchDataProduct(definition, params, source = "ioxio") {
   const api = "/api/data-product"
-  // In this application we use data products that are published under
-  //  "ioxio" source only
   const resp = await fetch(`${api}/${definition}?source=${source}`, {
     method: "POST",
     body: JSON.stringify(params),

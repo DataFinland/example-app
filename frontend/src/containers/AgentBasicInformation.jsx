@@ -33,19 +33,21 @@ export default function AgentBasicInformation() {
 
   async function fetchBasicInformation(event) {
     event.preventDefault()
-    setIsFetching(true)
-    const resp = await fetchDataProduct(DEFINITION, { nationalIdentifier }, source)
-    if (resp.ok) {
-      // Add the national identifier to the data; it's not included in the response
-      resp.data["nationalIdentifier"] = nationalIdentifier
-      setBasicInformation(resp.data)
-      setIsError(false)
-    } else {
-      setIsError(true)
-      setIsFetching(false)
-      throw new Error("Failed to fetch basic information")
+    try {
+        setIsFetching(true)
+        const resp = await fetchDataProduct(DEFINITION, { nationalIdentifier }, source)
+        if (resp.ok) {
+          // Add the national identifier to the data; it's not included in the response
+          resp.data["nationalIdentifier"] = nationalIdentifier
+          setBasicInformation(resp.data)
+          setIsError(false)
+        } else {
+          setIsError(true)
+          throw new Error("Failed to fetch basic information")
+        }
+    } finally {
+        setIsFetching(false)
     }
-    setIsFetching(false)
   }
 
   return (

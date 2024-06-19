@@ -82,8 +82,11 @@ export default function AgentBasicInformation() {
           </div>
         </div>
         <p>
-          By clicking "Fetch", you will request data from{" "}
-          <DataProductLink definition={DEFINITION} source={source} />
+          By clicking "Fetch", you will request company data standardized by the Nordic
+          Smart Government community following{" "}
+          <DataProductLink definition={DEFINITION} source={source} /> Currently the data
+          can be fetched from the Finnish Trade Registry and the Norwegian
+          Brønnøysundregistrene.
         </p>
       </div>
     </Box>

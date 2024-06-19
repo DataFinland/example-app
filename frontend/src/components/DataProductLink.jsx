@@ -12,8 +12,8 @@ export default function DataProductLink({ definition, source }) {
       data product published under <strong>{source}</strong> source on{" "}
       <a href={dataspaceConfiguration.dataspaceBaseUrl} target="_blank">
         {dataspaceConfiguration.dataspaceName}
-      </a>
-      .
+      </a>{" "}
+      dataspace.
     </span>
   )
 }

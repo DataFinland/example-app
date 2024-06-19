@@ -6,7 +6,7 @@ application that connects to a Dataspace built with the IOXIO Dataspace technolo
 It consists of a simple Python [FastAPI](https://fastapi.tiangolo.com) backend that is
 responsible for authentication and data retrieval and React-based frontend application.
 
-You can try the [online demo](https://df-example-app.ioxio.dev) or check the
+You can try the [online demo](https://df-example-app.demos.ioxio.dev) or check the
 [configuration](#configuration) section for instructions on how to run this code
 locally.
 
